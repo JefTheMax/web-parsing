@@ -4,7 +4,7 @@
 1. Для запуска необходим предустановленных Docker.
 2. Клонировать репозиторий git с github.com
 ```
-git clone git@github.com:JefTheMax/web-parsing.git
+https://github.com/JefTheMax/web-parsing.git
 ```
 3. Запуск проекта через build.sh
 4. Перейти по ссылке
