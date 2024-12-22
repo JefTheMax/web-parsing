@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block body %}
+<h1>Каталог</h1>
+<ul>
+    {% for book in books %}
+    <h2><a href="{{ book.link }}">{{ book.title }}</a></h2>
+    <h3 class="element"><a href="{{ book.author_link }}">{{ book.author }}</a></h3>
+    {% endfor %}
+</ul>
+{% endblock %}

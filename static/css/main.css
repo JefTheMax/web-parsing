@@ -1,0 +1,21 @@
+/* CSS стили для кнопки с развертыванием вниз */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none; /* Убираем подчеркивание из ссылок */
+    color: #333; /* Цвет текста ссылки */
+}
+
+a:hover {
+    color: #007bff; /* Цвет текста ссылки при наведении */
+}
+
+.element {
+    margin: 20px; /* 20px со всех сторон */
+}
