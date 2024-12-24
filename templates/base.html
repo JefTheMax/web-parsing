@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+          <img src="{{ url_for('static', filename='image/icon.png') }}" alt="icon">
+        </a>
+      </div>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="{{ url_for('about') }}" class="nav-link px-2">О сайте</a></li>
+      </ul>
+
+    </header>
+    <div class="dropdown-menu d-block position-static pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px" data-bs-theme="light">
+        <ul class="list-unstyled mb-0">
+            <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{{ url_for('index', order='title.asc') }}">
+                <span class="d-inline-block bg-success rounded-circle p-1"></span>
+                Отсортировать от А до Я по названию книги
+            </a></li>
+            <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{{ url_for('index', order='title.desc') }}">
+                <span class="d-inline-block bg-primary rounded-circle p-1"></span>
+                Отсортировать от Я до А по названию книги
+            </a></li>
+            <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{{ url_for('index', order='author.asc')}}">
+                <span class="d-inline-block bg-danger rounded-circle p-1"></span>
+                Отсортировать от А до Я по автору книги
+            </a></li>
+            <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{{ url_for('index', order='author.desc')}}">
+                <span class="d-inline-block bg-info rounded-circle p-1"></span>
+                Отсортировать от Я до А по автору книги
+            </a></li>
+        </ul>
+    </div>
+    {% block body %}{% endblock %}
+</div>
+</body>
+</html>
